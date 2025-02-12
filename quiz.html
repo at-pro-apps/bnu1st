@@ -1,0 +1,187 @@
+
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medica - Anatomy Quiz</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(-45deg, #009688, #3f51b5, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .quiz-container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            width: 500px;
+            transform: translateY(0);
+            opacity: 0;
+            animation: slideUp 1s ease forwards;
+        }
+
+        @keyframes slideUp {
+            to {
+                opacity: 1;
+                transform: translateY(-20px);
+            }
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .question {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .options label {
+            display: block;
+            background: #f8f8f8;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .options input {
+            display: none;
+        }
+
+        .options label:hover {
+            background: #ddd;
+        }
+
+        .options input:checked + label {
+            background: #23a6d5;
+            color: white;
+            border: 2px solid #00796b;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background: #009688;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #00796b;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 10px rgba(0, 150, 136, 0.3);
+        }
+
+        .result {
+            display: none;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .result h2 {
+            font-size: 22px;
+            color: #009688;
+        }
+
+        .weak-points {
+            margin-top: 10px;
+            color: #e74c3c;
+            font-weight: bold;
+        }
+
+        @media (max-width: 520px) {
+            .quiz-container {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>General MUSK Quiz - Friday On 1st week lectures & tutorials</h1>
+        <form id="quizForm">
+            <div id="quiz"></div>
+            <button type="submit" class="btn">تــمــام</button>
+        </form>
+        <div class="result">
+            <h2>Your Score: <span id="score"></span>%</h2>
+            <p class="weak-points" id="weakPoints"></p>
+            <button class="btn" onclick="downloadReport()">Download Report</button>
+        </div>
+    </div>
+
+    <script>
+
+
+        const quizForm = document.getElementById("quiz");
+        quizData.forEach((q, i) => {
+            let optionsHTML = q.options.map(opt => `
+                <div class="options">
+                    <input type="radio" id="${opt}${i}" name="q${i}" value="${opt}">
+                    <label for="${opt}${i}">${opt}</label>
+                </div>
+            `).join("");
+            quizForm.innerHTML += `<div class="question">${q.question}</div>${optionsHTML}`;
+        });
+
+        document.getElementById("quizForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            let score = 0, incorrectCategories = {};
+            quizData.forEach((q, i) => {
+                let selected = document.querySelector(`input[name="q${i}"]:checked`);
+                if (selected) {
+                    if (selected.value === q.answer) score++;
+                    else incorrectCategories[q.category] = true;
+                }
+            });
+
+            let percentage = Math.round((score / quizData.length) * 100);
+            document.getElementById("score").innerText = percentage;
+            document.getElementById("weakPoints").innerText = Object.keys(incorrectCategories).length 
+                ? "Revise: " + Object.keys(incorrectCategories).join(", ") 
+                : "Great job! No weak points.";
+            
+            document.querySelector(".result").style.display = "block";
+        });
+
+        function downloadReport() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            doc.text("Anatomy Quiz Report", 10, 10);
+            doc.text("Score: " + document.getElementById("score").innerText + "%", 10, 20);
+            doc.text("Weak Areas: " + document.getElementById("weakPoints").innerText, 10, 30);
+            doc.save("Quiz_Report.pdf");
+        }
+    </script>
+</body>
+</html>
