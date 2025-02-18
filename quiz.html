@@ -139,83 +139,93 @@
 
     <script>
         const quizData = [
-            // Calcium & Phosphate Homeostasis
-            { question: "Which of the following describes the role of the NCX1 in calcium absorption in the intestine?", options: ["It facilitates the transport of Na+ out of the cell and Ca²⁺ into the cell.", "It transports three Na+ ions into the cell while moving one Ca²⁺ ion out.", "It directly binds to calcium to enhance its absorption.", "It inhibits the absorption of calcium by binding to oxalate."], answer: "It transports three Na+ ions into the cell while moving one Ca²⁺ ion out.", category: "Calcium & Phosphate Homeostasis" },
-            { question: "What effect does an increase in plasma phosphate levels have on calcium homeostasis according to the text?", options: ["It increases ionized calcium in plasma, potentially leading to hypercalcemia.", "It decreases ionized calcium in plasma, which can result in tetany.", "It has no effect on calcium levels in the plasma.", "It enhances calcium absorption in the duodenum."], answer: "It decreases ionized calcium in plasma, which can result in tetany.", category: "Calcium & Phosphate Homeostasis" },
-            { question: "Which of these factors is NOT listed as enhancing calcium absorption in the text?", options: ["Presence of proteins and amino acids in food", "Low pH environment in the stomach", "Vitamin D activation by parathyroid hormone", "High levels of oxalate in the diet"], answer: "High levels of oxalate in the diet", category: "Calcium & Phosphate Homeostasis" },
-            { question: "What is the primary biological function of phosphate in the context of metabolism?", options: ["Acts as a buffer in the blood", "Participates in the synthesis of sugar phosphates", "Helps in muscle contractility", "Activates enzymes like lipase and phosphorylase"], answer: "Participates in the synthesis of sugar phosphates", category: "Calcium & Phosphate Homeostasis" },
-            { question: "Which statement accurately describes the relationship between calcium and phosphate absorption?", options: ["A Ca/P ratio greater than 2/1 enhances phosphate absorption.", "Excess calcium promotes phosphate absorption by forming soluble complexes.", "The best Ca/P ratio for the absorption of both elements is 1/1.", "Calcium and phosphate compete for absorption, reducing each other's uptake."], answer: "The best Ca/P ratio for the absorption of both elements is 1/1.", category: "Calcium & Phosphate Homeostasis" },
+    // Fascia of the Thigh
+    { question: "Which layer of the superficial fascia contains cutaneous nerves?", options: ["Fatty layer", "Membranous layer", "Both layers", "Neither layer"], answer: "Both layers", category: "Fascia of the Thigh" },
 
-            // Skeletal Muscle
-            { question: "Which of these descriptions correctly differentiates a sarcomere from the rest of the muscle structure at the electron microscopic level?", options: ["The area between two successive A bands.", "The distance between two successive M lines.", "The region between two successive Z lines, containing both actin and myosin.", "The segment from one H band to the next within the A band."], answer: "The region between two successive Z lines, containing both actin and myosin.", category: "Skeletal Muscle" },
-            { question: "In the context of skeletal muscle, what is the function of the T-tubules?", options: ["They store calcium ions for muscle contraction.", "They facilitate the quick spread of action potentials deep into the muscle fiber.", "They are primarily involved in protein synthesis within muscle cells.", "They form the H band within the A band."], answer: "They facilitate the quick spread of action potentials deep into the muscle fiber.", category: "Skeletal Muscle" },
-            { question: "What is a unique feature of cardiac muscle fibers compared to skeletal muscle fibers as described in the text?", options: ["Presence of triads.", "Location of T-tubules at the A-I junctions.", "Presence of intercalated discs.", "More numerous and larger mitochondria."], answer: "Presence of intercalated discs.", category: "Skeletal Muscle" },
-            { question: "Which statement about the connective tissue components in skeletal muscle is correct?", options: ["Endomysium is a dense, irregular collagenous tissue covering the whole muscle.", "Perimysium, which surrounds fascicles, is composed mainly of external lamina and reticular fibers.", "Epimysium is the least dense connective tissue around individual muscle fibers.", "Blood vessels run parallel to muscle fibers within the connective tissue septa."], answer: "Blood vessels run parallel to muscle fibers within the connective tissue septa.", category: "Skeletal Muscle" },
-            { question: "What is the primary difference between Type I (red) and Type II (white) skeletal muscle fibers?", options: ["Type I fibers are fast twitch and easily fatigued, while Type II are slow twitch and resistant to fatigue.", "Type I fibers have a small diameter and high myoglobin content, making them slow twitch and fatigue-resistant.", "Type II fibers are more aerobic, with a high concentration of mitochondria compared to Type I fibers.", "Type I fibers are larger in diameter and contain more glycogen than Type II fibers."], answer: "Type I fibers have a small diameter and high myoglobin content, making them slow twitch and fatigue-resistant.", category: "Skeletal Muscle" },
+    // Compartments of the Thigh
+    { question: "Which compartment includes muscles primarily responsible for knee extension?", options: ["Anterior", "Medial", "Posterior", "Lateral"], answer: "Anterior", category: "Compartments of the Thigh" },
 
-            // Histological structure of motor end plate and muscle
-            { question: "What is the primary role of acetylcholine esterase in the neuromuscular junction?", options: ["To synthesize acetylcholine in the axon terminal.", "To increase the surface area of the postsynaptic membrane.", "To hydrolyze acetylcholine in the synaptic cleft.", "To facilitate the release of acetylcholine from synaptic vesicles."], answer: "To hydrolyze acetylcholine in the synaptic cleft.", category: "Neuromuscular Junction" },
-            { question: "Which component of the muscle spindle is responsible for responding to the rate of muscle stretch?", options: ["Nuclear bag fibers", "Nuclear chain fibers", "Annulospiral nerve endings", "Flower spray nerve endings"], answer: "Annulospiral nerve endings", category: "Neuromuscular Junction" },
-            { question: "What differentiates the function of Golgi tendon organs from muscle spindles?", options: ["Golgi tendon organs respond to muscle contraction while muscle spindles respond to muscle relaxation.", "Golgi tendon organs detect changes in muscle length, whereas muscle spindles detect changes in tension.", "Golgi tendon organs trigger muscle contraction, and muscle spindles cause muscle relaxation.", "Golgi tendon organs inhibit muscle contraction, whereas muscle spindles stimulate muscle contraction."], answer: "Golgi tendon organs inhibit muscle contraction, whereas muscle spindles stimulate muscle contraction.", category: "Neuromuscular Junction" },
-            { question: "Which feature of the neuromuscular junction increases the effectiveness of neurotransmitter action?", options: ["The presence of numerous mitochondria in the axon terminal.", "The junctional folds or secondary synaptic clefts on the postsynaptic membrane.", "The high concentration of acetylcholine in the synaptic vesicles.", "The myelin sheath around the motor nerve fiber."], answer: "The junctional folds or secondary synaptic clefts on the postsynaptic membrane.", category: "Neuromuscular Junction" },
-            { question: "What type of nerve fibers innervate the contractile portions of intrafusal muscle fibers in muscle spindles?", options: ["α-motor fibers", "Sensory nerve fibers", "γ-motor fibers", "Annulospiral endings"], answer: "γ-motor fibers", category: "Neuromuscular Junction" },
+    // Femoral Triangle
+    { question: "What forms the base of the femoral triangle?", options: ["Sartorius muscle", "Inguinal ligament", "Adductor longus muscle", "Femoral nerve"], answer: "Inguinal ligament", category: "Femoral Triangle" },
 
-            // Cartilage
-            { question: "Which of the following best describes the function of chondrocytes within cartilage?", options: ["They are primarily responsible for the degradation of the cartilage matrix.", "They secrete fibers that enhance cartilage elasticity.", "They synthesize and maintain the cartilage matrix, and can also undergo division for interstitial growth.", "They form new layers on the outer surface of cartilage via appositional growth."], answer: "They synthesize and maintain the cartilage matrix, and can also undergo division for interstitial growth.", category: "Cartilage" },
-            { question: "What is the primary reason hyaline cartilage appears translucent under a light microscope?", options: ["It contains a high number of elastic fibers.", "Its collagen fibers (Type II) have the same refractive index as the matrix.", "It has a high concentration of proteoglycans.", "The matrix is made up mostly of water."], answer: "Its collagen fibers (Type II) have the same refractive index as the matrix.", category: "Cartilage" },
-            { question: "Which type of cartilage lacks a perichondrium?", options: ["Hyaline cartilage in the trachea", "Elastic cartilage in the ear pinna", "Articular cartilage in synovial joints", "Fibrocartilage in intervertebral discs"], answer: "Fibrocartilage in intervertebral discs", category: "Cartilage" },
-            { question: "Which component is primarily responsible for the compressive strength of cartilage?", options: ["Collagen type I fibers", "Proteoglycans with their associated water content", "Chondrogenic cells", "Elastic fibers"], answer: "Proteoglycans with their associated water content", category: "Cartilage" },
-            { question: "In the context of synovial joints, what is the main function of Type B cells in the synovial membrane?", options: ["Phagocytosis of debris within the joint space", "Secretion of synovial fluid", "Formation of new cartilage tissue", "Increasing the tensile strength of the joint capsule"], answer: "Secretion of synovial fluid", category: "Cartilage" },
+    // Femoral Sheath & Canal
+    { question: "The femoral canal serves as a pathway for what type of hernia?", options: ["Inguinal hernia", "Umbilical hernia", "Femoral hernia", "Incisional hernia"], answer: "Femoral hernia", category: "Femoral Sheath & Canal" },
 
-            // Front of the Thigh
-            { question: "Which nerve supplies the skin of the femoral triangle?", options: ["Lateral cutaneous nerve of the thigh", "Medial cutaneous nerve of the thigh", "Femoral branch of Genitofemoral nerve", "Intermediate cutaneous nerve of the thigh"], answer: "Femoral branch of Genitofemoral nerve", category: "Front of the Thigh" },
-            { question: "What is the primary function of the iliotibial tract in relation to the muscles attached to it?", options: ["Stabilizing the ankle joint", "Facilitating hip and knee movements", "Enhancing the flexing capabilities of the thigh", "Supporting the adductor muscles"], answer: "Facilitating hip and knee movements", category: "Front of the Thigh" },
-            { question: "Which of the following is NOT a content of the femoral triangle?", options: ["Femoral nerve", "Femoral artery", "Obturator nerve", "Deep inguinal lymph nodes"], answer: "Obturator nerve", category: "Front of the Thigh" },
-            { question: "What does the cribriform fascia primarily allow passage for into the femoral vein?", options: ["Small saphenous vein", "Femoral artery branches", "Great saphenous vein", "Superficial inguinal lymph nodes"], answer: "Great saphenous vein", category: "Front of the Thigh" },
-            { question: "How many compartments does the femoral sheath divide into?", options: ["Two", "Three", "Four", "Five"], answer: "Three", category: "Front of the Thigh" },
+    // Femoral Artery
+    { question: "Which artery is not a branch of the femoral artery?", options: ["Superficial epigastric", "Deep circumflex iliac", "Superficial external pudendal", "Profunda femoris"], answer: "Deep circumflex iliac", category: "Femoral Artery" },
 
-            // Medial side of the Thigh
-            { question: "Which muscle from the medial compartment of the thigh also flexes the knee joint?", options: ["Adductor longus", "Adductor brevis", "Gracilis", "Obturator externus"], answer: "Gracilis", category: "Medial side of the Thigh" },
-            { question: "What nerve primarily supplies the muscles of the medial compartment of the thigh?", options: ["Femoral nerve", "Obturator nerve", "Sciatic nerve", "Pudendal nerve"], answer: "Obturator nerve", category: "Medial side of the Thigh" },
-            { question: "Which of the following is NOT a content of the adductor canal?", options: ["Femoral artery", "Femoral vein", "Sciatic nerve", "Saphenous nerve"], answer: "Sciatic nerve", category: "Medial side of the Thigh" },
-            { question: "Which muscle forms part of the floor of the adductor canal?", options: ["Adductor longus", "Sartorius", "Vastus medialis", "Rectus femoris"], answer: "Adductor longus", category: "Medial side of the Thigh" },
-            { question: "What is the primary origin of the obturator nerve?", options: ["Sacral plexus", "Lumbar plexus", "Brachial plexus", "Cervical plexus"], answer: "Lumbar plexus", category: "Medial side of the Thigh" },
+    // Medial Compartment Muscles
+    { question: "Which muscle does not belong to the medial compartment of the thigh?", options: ["Adductor longus", "Adductor brevis", "Biceps femoris", "Gracilis"], answer: "Biceps femoris", category: "Medial Compartment Muscles" },
 
-            // Repair & Acute Osteomyelitis
-            { question: "Which cell type is primarily responsible for initiating bone healing?", options: ["Osteoclasts", "Chondrocytes", "Fibroblasts", "Osteoblasts"], answer: "Osteoblasts", category: "Repair & Acute Osteomyelitis" },
-            { question: "What is the primary function of the soft callus during bone healing?", options: ["To provide structural support", "To facilitate mineralization of the bone", "To recruit immune cells", "To promote vascularization"], answer: "To provide structural support", category: "Repair & Acute Osteomyelitis" },
-            { question: "Which of the following organisms is most commonly associated with acute hematogenous osteomyelitis?", options: ["Streptococcus pyogenes", "Escherichia coli", "Staphylococcus aureus", "Pseudomonas aeruginosa"], answer: "Staphylococcus aureus", category: "Repair & Acute Osteomyelitis" },
-            { question: "In acute osteomyelitis, what does the term 'sequestrum' refer to?", options: ["New bone formation around the infection", "The initial abscess formation", "Necrotic bone separated from viable bone", "The pus formed in the bone marrow"], answer: "Necrotic bone separated from viable bone", category: "Repair & Acute Osteomyelitis" },
-            { question: "What is the most common site for the initiation of acute hematogenous osteomyelitis in children?", options: ["Epiphysis", "Metaphysis", "Diaphysis", "Periosteum"], answer: "Metaphysis", category: "Repair & Acute Osteomyelitis" },
+    // Adductor Canal
+    { question: "What does not pass through the adductor canal?", options: ["Femoral artery", "Femoral vein", "Sciatic nerve", "Saphenous nerve"], answer: "Sciatic nerve", category: "Adductor Canal" },
 
-            // Diseases of Joints (Arthritis)
-            { question: "Which is the primary etiologic factor in the pathogenesis of rheumatoid arthritis?", options: ["Bacterial infection", "Autoimmune response", "Mechanical wear", "Viral infection"], answer: "Autoimmune response", category: "Diseases of Joints (Arthritis)" },
-            { question: "What is the characteristic pathological feature of osteoarthritis?", options: ["Inflammation of the synovium", "Pannus formation", "Progressive loss of articular cartilage", "Fibrous ankylosis"], answer: "Progressive loss of articular cartilage", category: "Diseases of Joints (Arthritis)" },
-            { question: "Which type of arthritis is most commonly associated with the deposition of monosodium urate crystals?", options: ["Rheumatoid arthritis", "Osteoarthritis", "Gouty arthritis", "Tuberculous arthritis"], answer: "Gouty arthritis", category: "Diseases of Joints (Arthritis)" },
-            { question: "In which of the following diseases are tophi considered pathognomonic?", options: ["Pigmented Villonodular Synovitis", "Rheumatoid Arthritis", "Osteoarthritis", "Gout"], answer: "Gout", category: "Diseases of Joints (Arthritis)" },
-            { question: "What is the main pathological feature of Pigmented Villonodular Synovitis?", options: ["Hemosiderin deposition in the synovial stroma", "Bone erosion", "Cartilage degeneration", "Synovial fluid accumulation"], answer: "Hemosiderin deposition in the synovial stroma", category: "Diseases of Joints (Arthritis)" },
+    // Obturator Artery & Nerve
+    { question: "The obturator nerve supplies which joint primarily?", options: ["Knee joint", "Hip joint", "Ankle joint", "Wrist joint"], answer: "Hip joint", category: "Obturator Artery & Nerve" },
 
-            // Neuromuscular Junction
-            { question: "What primarily occurs in the synaptic knob of the neuromuscular junction?", options: ["Storage of dopamine", "Synthesis of acetylcholine", "Release of calcium ions", "Storage of ATP"], answer: "Synthesis of acetylcholine", category: "Neuromuscular Junction" },
-            { question: "What is the role of voltage-gated calcium channels in neuromuscular transmission?", options: ["They trigger the release of acetylcholine", "They facilitate sodium influx", "They cause muscle contraction directly", "They block neurotransmitter release"], answer: "They trigger the release of acetylcholine", category: "Neuromuscular Junction" },
-            { question: "Which of the following best describes the 'conduction delay' in neuromuscular transmission?", options: ["Time for muscle fiber contraction", "Time for nerve regeneration", "Time between nerve impulse and muscle action potential", "Time for neurotransmitter reuptake"], answer: "Time between nerve impulse and muscle action potential", category: "Neuromuscular Junction" },
-            { question: "What is the primary cause of muscle fatigue in neuromuscular transmission?", options: ["Depletion of ATP", "Excessive calcium in the muscle", "Depletion of acetylcholine", "Increase in acetylcholine receptors"], answer: "Depletion of acetylcholine", category: "Neuromuscular Junction" },
-            { question: "What is the underlying cause of Myasthenia Gravis?", options: ["Deficiency of acetylcholine", "Inhibition of acetylcholinesterase", "Autoimmune attack on acetylcholine receptors", "Overproduction of acetylcholine"], answer: "Autoimmune attack on acetylcholine receptors", category: "Neuromuscular Junction" },
+    // Muscles of the Gluteal Region
+    { question: "Which muscle is not part of the large gluteal muscles?", options: ["Gluteus maximus", "Gluteus medius", "Piriformis", "Tensor fasciae latae"], answer: "Piriformis", category: "Muscles of the Gluteal Region" },
 
-            // Muscle Action Potential
-            { question: "Which of the following best describes the ionic basis for the rapid depolarization phase of a muscle action potential?", options: ["Efflux of potassium ions", "Influx of calcium ions", "Rapid influx of sodium ions", "Efflux of chloride ions"], answer: "Rapid influx of sodium ions", category: "Muscle Action Potential" },
-            { question: "What is the typical resting membrane potential of a skeletal muscle fiber?", options: ["-50 mV", "-70 mV", "-90 mV", "-110 mV"], answer: "-90 mV", category: "Muscle Action Potential" },
-            { question: "Which phase of the muscle action potential curve is characterized by a very slow initial depolarization?", options: ["Latent period", "Spike potential", "After depolarization", "After hyperpolarization"], answer: "Spike potential", category: "Muscle Action Potential" },
-            { question: "How does the motor end plate potential differ from the muscle action potential?", options: ["It is propagative", "It has a refractory period", "It obeys the all-or-none law", "It is non-propagative"], answer: "It is non-propagative", category: "Muscle Action Potential" },
-            { question: "What is the primary difference in action potential duration between nerve and skeletal muscle?", options: ["Nerve action potentials are longer", "Skeletal muscle action potentials are shorter", "Skeletal muscle action potentials last about 4 msec", "Nerve action potentials have no after potential"], answer: "Skeletal muscle action potentials last about 4 msec", category: "Muscle Action Potential" },
+    // Ligaments & Foramina
+    { question: "Which ligament connects the sacrum to the ischial spine?", options: ["Sacrotuberous ligament", "Sacrospinous ligament", "Iliolumbar ligament", "Anterior sacroiliac ligament"], answer: "Sacrospinous ligament", category: "Ligaments & Foramina" },
 
-            // Muscle Excitation
-            { question: "What happens when calcium ions bind to troponin C during muscle contraction?", options: ["It inhibits the binding of myosin to actin", "It pulls tropomyosin away from actin's active sites", "It prevents myosin from tilting", "It causes relaxation of the muscle"], answer: "It pulls tropomyosin away from actin's active sites", category: "Muscle Excitation" },
-            { question: "Which structure is responsible for transmitting the action potential into the interior of the muscle fiber?", options: ["Sarcoplasmic reticulum", "Transverse tubules", "Sarcolemma", "Myofibrils"], answer: "Transverse tubules", category: "Muscle Excitation" },
-            { question: "What is the primary role of ATP in the 'walk-along' theory of muscle contraction?", options: ["To bind calcium to troponin", "To maintain the resting state of the muscle", "To facilitate the detachment of myosin from actin", "To prevent calcium release from the sarcoplasmic reticulum"], answer: "To facilitate the detachment of myosin from actin", category: "Muscle Excitation" },
-            { question: "Why is muscle relaxation described as an active process?", options: ["Because it requires calcium influx", "Because it involves passive diffusion of ions", "Because it requires energy from ATP to pump calcium back into the sarcoplasmic reticulum", "Because it involves spontaneous muscle fiber relaxation"], answer: "Because it requires energy from ATP to pump calcium back into the sarcoplasmic reticulum", category: "Muscle Excitation" },
-            { question: "What protein complex physically blocks the myosin binding sites on actin in a relaxed muscle?", options: ["Actin and myosin", "Myosin and troponin", "Troponin and tropomyosin", "Calsequestrin and tropomyosin"], answer: "Troponin and tropomyosin", category: "Muscle Excitation" }
-        ];
+    // Nerves of the Gluteal Region
+    { question: "Which nerve supplies the gluteus maximus?", options: ["Superior gluteal nerve", "Inferior gluteal nerve", "Sciatic nerve", "Pudendal nerve"], answer: "Inferior gluteal nerve", category: "Nerves of the Gluteal Region" },
+
+    // Arteries of the Gluteal Region
+    { question: "The superior gluteal artery originates from:", options: ["External iliac artery", "Internal iliac artery", "Femoral artery", "Profunda femoris artery"], answer: "Internal iliac artery", category: "Arteries of the Gluteal Region" },
+
+    // Calcium & Phosphate Homeostasis
+    { question: "What is the primary function of calcium in muscle contraction?", options: ["Activating ATP", "Regulating neuromuscular excitability", "Facilitating hormone release", "Bone mineralization"], answer: "Regulating neuromuscular excitability", category: "Calcium & Phosphate Homeostasis" },
+
+    // Calcium Requirements
+    { question: "What is the recommended daily calcium intake for pregnant women?", options: ["0.8 g/day", "1.0 g/day", "1.2 g/day", "1.5 g/day"], answer: "1.2 g/day", category: "Calcium & Phosphate Homeostasis" },
+
+    // Calcium Absorption
+    { question: "Which factor enhances calcium absorption?", options: ["Oxalates", "Vitamin D", "Phytates", "Unabsorbed fatty acids"], answer: "Vitamin D", category: "Calcium & Phosphate Homeostasis" },
+
+    // Phosphate Homeostasis
+    { question: "Which hormone increases renal phosphate excretion?", options: ["Calcitonin", "Parathyroid Hormone (PTH)", "Insulin", "Aldosterone"], answer: "Parathyroid Hormone (PTH)", category: "Calcium & Phosphate Homeostasis" },
+
+    // Skeletal Muscle Histology
+    { question: "Which structure is not directly involved in skeletal muscle contraction?", options: ["Sarcomere", "Sarcoplasmic reticulum", "Perimysium", "Myofibrils"], answer: "Perimysium", category: "Skeletal Muscle Histology" },
+
+    // Types of Skeletal Muscle Fibers
+    { question: "Which fiber type has the highest myoglobin content?", options: ["Type I", "Type II", "Intermediate fibers", "None of the above"], answer: "Type I", category: "Skeletal Muscle Histology" },
+
+    // Cardiac Muscle Features
+    { question: "What is unique to cardiac muscle cells compared to skeletal muscle cells?", options: ["Peripheral nuclei", "Intercalated discs", "Striations", "Myofibrils"], answer: "Intercalated discs", category: "Skeletal Muscle Histology" },
+
+    // Smooth Muscle Features
+    { question: "Which feature distinguishes smooth muscle from skeletal muscle?", options: ["Presence of striations", "Central nucleus", "Voluntary control", "Rapid contraction"], answer: "Central nucleus", category: "Skeletal Muscle Histology" },
+
+    // Neuromuscular Junction
+    { question: "What neurotransmitter is primarily involved in muscle contraction at the NMJ?", options: ["Dopamine", "Serotonin", "Acetylcholine", "GABA"], answer: "Acetylcholine", category: "Neuromuscular Junction" },
+
+    // Muscle Spindle
+    { question: "What do muscle spindles primarily detect?", options: ["Muscle tension", "Muscle length", "Muscle fatigue", "Muscle temperature"], answer: "Muscle length", category: "Neuromuscular Junction" },
+
+    // Golgi Tendon Organ
+    { question: "The function of the Golgi tendon organ is to:", options: ["Detect muscle stretch", "Detect muscle tension", "Control muscle contraction speed", "Enhance muscle strength"], answer: "Detect muscle tension", category: "Neuromuscular Junction" },
+
+    // Cartilage
+    { question: "Which type of cartilage lacks perichondrium?", options: ["Hyaline cartilage", "Elastic cartilage", "Fibrocartilage", "All types have perichondrium"], answer: "Fibrocartilage", category: "Cartilage" },
+
+    // Bone Cells
+    { question: "Which bone cell is responsible for bone resorption?", options: ["Osteoblast", "Osteocyte", "Osteoclast", "Osteogenic cell"], answer: "Osteoclast", category: "Bone Histology" },
+
+    // Bone Matrix
+    { question: "What is the main organic component of bone matrix?", options: ["Hydroxyapatite", "Collagen type I", "Calcium phosphate", "Proteoglycans"], answer: "Collagen type I", category: "Bone Histology" },
+
+    // Acute Osteomyelitis
+    { question: "What is the most common site for acute osteomyelitis in children?", options: ["Vertebrae", "Long bones", "Skull", "Pelvis"], answer: "Long bones", category: "Acute Osteomyelitis" },
+
+    // Arthritis
+    { question: "Which type of arthritis is characterized by uric acid crystal deposition?", options: ["Rheumatoid arthritis", "Osteoarthritis", "Gouty arthritis", "Septic arthritis"], answer: "Gouty arthritis", category: "Arthritis" },
+
+    // Muscle Action Potential
+    { question: "During muscle depolarization, which ion primarily moves into the cell?", options: ["Potassium", "Sodium", "Calcium", "Chloride"], answer: "Sodium", category: "Muscle Action Potential" }
+];
 
         const quizForm = document.getElementById("quiz");
         quizData.forEach((q, i) => {
