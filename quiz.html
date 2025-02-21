@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Medica Mid Quiz</title>
+    <title>Medica 2nd Week Quiz</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <style>
@@ -125,7 +125,7 @@
 </head>
 <body>
     <div class="quiz-container">
-        <h1> Medica Mid Quiz </h1>
+        <h1> Medica 2nd week Quiz </h1>
         <form id="quizForm">
             <div id="quiz"></div>
             <button type="submit" class="btn">Submit</button>
@@ -139,93 +139,111 @@
 
     <script>
         const quizData = [
-    // Fascia of the Thigh
-    { question: "Which layer of the superficial fascia contains cutaneous nerves?", options: ["Fatty layer", "Membranous layer", "Both layers", "Neither layer"], answer: "Both layers", category: "Fascia of the Thigh" },
+            // Bone Cells
+            { question: "Which bone cell is responsible for bone resorption?", options: ["Osteoblasts", "Osteocytes", "Osteoclasts", "Osteoprogenitor cells"], answer: "Osteoclasts" },
 
-    // Compartments of the Thigh
-    { question: "Which compartment includes muscles primarily responsible for knee extension?", options: ["Anterior", "Medial", "Posterior", "Lateral"], answer: "Anterior", category: "Compartments of the Thigh" },
+            // Bone Structure
+            { question: "What is the primary inorganic component of the bone matrix?", options: ["Collagen type I", "Hydroxyapatite", "Elastin", "Chondroitin sulfate"], answer: "Hydroxyapatite" },
 
-    // Femoral Triangle
-    { question: "What forms the base of the femoral triangle?", options: ["Sartorius muscle", "Inguinal ligament", "Adductor longus muscle", "Femoral nerve"], answer: "Inguinal ligament", category: "Femoral Triangle" },
+            // Bone Formation
+            { question: "Which enzyme secreted by osteoblasts is essential for bone mineralization?", options: ["Alkaline phosphatase", "Amylase", "Pepsin", "Lipase"], answer: "Alkaline phosphatase" },
 
-    // Femoral Sheath & Canal
-    { question: "The femoral canal serves as a pathway for what type of hernia?", options: ["Inguinal hernia", "Umbilical hernia", "Femoral hernia", "Incisional hernia"], answer: "Femoral hernia", category: "Femoral Sheath & Canal" },
+            // Periosteum
+            { question: "What is the function of Sharpey’s fibers in the periosteum?", options: ["Secreting bone matrix", "Connecting periosteum to bone", "Transporting nutrients", "Producing osteoclasts"], answer: "Connecting periosteum to bone" },
 
-    // Femoral Artery
-    { question: "Which artery is not a branch of the femoral artery?", options: ["Superficial epigastric", "Deep circumflex iliac", "Superficial external pudendal", "Profunda femoris"], answer: "Deep circumflex iliac", category: "Femoral Artery" },
+            // Bone Growth
+            { question: "Which zone of the epiphyseal plate is responsible for actively dividing cartilage cells?", options: ["Resting zone", "Proliferative zone", "Hypertrophic zone", "Calcification zone"], answer: "Proliferative zone" },
 
-    // Medial Compartment Muscles
-    { question: "Which muscle does not belong to the medial compartment of the thigh?", options: ["Adductor longus", "Adductor brevis", "Biceps femoris", "Gracilis"], answer: "Biceps femoris", category: "Medial Compartment Muscles" },
+            // Drugs Affecting Calcium Metabolism
+            { question: "Which hormone is the primary regulator of calcium homeostasis?", options: ["Insulin", "Parathyroid hormone", "Glucagon", "Aldosterone"], answer: "Parathyroid hormone" },
 
-    // Adductor Canal
-    { question: "What does not pass through the adductor canal?", options: ["Femoral artery", "Femoral vein", "Sciatic nerve", "Saphenous nerve"], answer: "Sciatic nerve", category: "Adductor Canal" },
+            { question: "Which class of drugs primarily inhibits osteoclast-mediated bone resorption?", options: ["Bisphosphonates", "Beta-blockers", "NSAIDs", "Calcium supplements"], answer: "Bisphosphonates" },
 
-    // Obturator Artery & Nerve
-    { question: "The obturator nerve supplies which joint primarily?", options: ["Knee joint", "Hip joint", "Ankle joint", "Wrist joint"], answer: "Hip joint", category: "Obturator Artery & Nerve" },
+            { question: "What is a key precaution when administering bisphosphonates orally?", options: ["Take them with dairy products", "Remain upright for 30 minutes", "Administer with iron supplements", "Avoid water intake"], answer: "Remain upright for 30 minutes" },
 
-    // Muscles of the Gluteal Region
-    { question: "Which muscle is not part of the large gluteal muscles?", options: ["Gluteus maximus", "Gluteus medius", "Piriformis", "Tensor fasciae latae"], answer: "Piriformis", category: "Muscles of the Gluteal Region" },
+            { question: "Which drug is a monoclonal antibody used in osteoporosis treatment?", options: ["Denosumab", "Alendronate", "Cinacalcet", "Gallium nitrate"], answer: "Denosumab" },
 
-    // Ligaments & Foramina
-    { question: "Which ligament connects the sacrum to the ischial spine?", options: ["Sacrotuberous ligament", "Sacrospinous ligament", "Iliolumbar ligament", "Anterior sacroiliac ligament"], answer: "Sacrospinous ligament", category: "Ligaments & Foramina" },
+            { question: "How does Cinacalcet help in managing hyperparathyroidism?", options: ["Increases vitamin D production", "Blocks calcium sensors in the parathyroid gland", "Stimulates osteoclast activity", "Enhances kidney calcium reabsorption"], answer: "Blocks calcium sensors in the parathyroid gland" },
 
-    // Nerves of the Gluteal Region
-    { question: "Which nerve supplies the gluteus maximus?", options: ["Superior gluteal nerve", "Inferior gluteal nerve", "Sciatic nerve", "Pudendal nerve"], answer: "Inferior gluteal nerve", category: "Nerves of the Gluteal Region" },
+            // Anterior & Lateral Compartments of Leg
+            { question: "Which nerve supplies all the muscles of the anterior compartment of the leg?", options: ["Superficial peroneal nerve", "Tibial nerve", "Deep peroneal nerve", "Sural nerve"], answer: "Deep peroneal nerve" },
 
-    // Arteries of the Gluteal Region
-    { question: "The superior gluteal artery originates from:", options: ["External iliac artery", "Internal iliac artery", "Femoral artery", "Profunda femoris artery"], answer: "Internal iliac artery", category: "Arteries of the Gluteal Region" },
+            { question: "Which structure forms the boundary between the anterior and lateral compartments of the leg?", options: ["Interosseous membrane", "Anterior intermuscular septum", "Posterior intermuscular septum", "Superior peroneal retinaculum"], answer: "Anterior intermuscular septum" },
 
-    // Calcium & Phosphate Homeostasis
-    { question: "What is the primary function of calcium in muscle contraction?", options: ["Activating ATP", "Regulating neuromuscular excitability", "Facilitating hormone release", "Bone mineralization"], answer: "Regulating neuromuscular excitability", category: "Calcium & Phosphate Homeostasis" },
+            { question: "Which artery continues as the dorsalis pedis artery on the dorsum of the foot?", options: ["Peroneal artery", "Anterior tibial artery", "Posterior tibial artery", "Superficial femoral artery"], answer: "Anterior tibial artery" },
 
-    // Calcium Requirements
-    { question: "What is the recommended daily calcium intake for pregnant women?", options: ["0.8 g/day", "1.0 g/day", "1.2 g/day", "1.5 g/day"], answer: "1.2 g/day", category: "Calcium & Phosphate Homeostasis" },
+            { question: "Which muscle is located in the dorsum of the foot and assists in extending the toes?", options: ["Extensor hallucis longus", "Extensor digitorum longus", "Extensor digitorum brevis", "Peroneus tertius"], answer: "Extensor digitorum brevis" },
 
-    // Calcium Absorption
-    { question: "Which factor enhances calcium absorption?", options: ["Oxalates", "Vitamin D", "Phytates", "Unabsorbed fatty acids"], answer: "Vitamin D", category: "Calcium & Phosphate Homeostasis" },
+            { question: "The superficial peroneal nerve provides cutaneous sensation to which area?", options: ["Medial foot including the great toe", "Lateral foot and sole", "Middle dorsum of the foot and toes", "First web space of the foot"], answer: "Middle dorsum of the foot and toes" },
+            // Popliteal Fossa
+{ question: "Which muscle forms the superior lateral boundary of the popliteal fossa?", options: ["Semitendinosus", "Gastrocnemius (medial head)", "Biceps femoris", "Plantaris"], answer: "Biceps femoris", category: "Popliteal Fossa" },
 
-    // Phosphate Homeostasis
-    { question: "Which hormone increases renal phosphate excretion?", options: ["Calcitonin", "Parathyroid Hormone (PTH)", "Insulin", "Aldosterone"], answer: "Parathyroid Hormone (PTH)", category: "Calcium & Phosphate Homeostasis" },
+// Posterior Tibial Artery
+{ question: "Which statement correctly describes the posterior tibial artery?", options: ["It is a branch of the common peroneal artery", "It arises at the upper border of the popliteus muscle", "It terminates into the anterior and posterior tibial arteries", "It passes deep to the soleus and gastrocnemius muscles"], answer: "It passes deep to the soleus and gastrocnemius muscles", category: "Posterior Tibial Artery" },
 
-    // Skeletal Muscle Histology
-    { question: "Which structure is not directly involved in skeletal muscle contraction?", options: ["Sarcomere", "Sarcoplasmic reticulum", "Perimysium", "Myofibrils"], answer: "Perimysium", category: "Skeletal Muscle Histology" },
+// Nerve Supply
+{ question: "What is the main nerve supply for all muscles in the posterior compartment of the leg?", options: ["Common peroneal nerve", "Femoral nerve", "Tibial nerve", "Obturator nerve"], answer: "Tibial nerve", category: "Nerve Supply" },
 
-    // Types of Skeletal Muscle Fibers
-    { question: "Which fiber type has the highest myoglobin content?", options: ["Type I", "Type II", "Intermediate fibers", "None of the above"], answer: "Type I", category: "Skeletal Muscle Histology" },
+// Muscle Arrangement
+{ question: "Which muscle is NOT part of the superficial group in the posterior compartment of the leg?", options: ["Soleus", "Gastrocnemius", "Plantaris", "Tibialis posterior"], answer: "Tibialis posterior", category: "Muscle Arrangement" },
 
-    // Cardiac Muscle Features
-    { question: "What is unique to cardiac muscle cells compared to skeletal muscle cells?", options: ["Peripheral nuclei", "Intercalated discs", "Striations", "Myofibrils"], answer: "Intercalated discs", category: "Skeletal Muscle Histology" },
+// Popliteal Vein
+{ question: "Which statement best describes the course of the popliteal vein in the popliteal fossa?", options: ["It is the most deeply located structure in the fossa", "It is medial to the popliteal artery throughout its course", "It begins at the lower border of the popliteus muscle and ends as the femoral vein", "It lies deep to the popliteal artery and tibial nerve"], answer: "It begins at the lower border of the popliteus muscle and ends as the femoral vein", category: "Popliteal Vein" },
 
-    // Smooth Muscle Features
-    { question: "Which feature distinguishes smooth muscle from skeletal muscle?", options: ["Presence of striations", "Central nucleus", "Voluntary control", "Rapid contraction"], answer: "Central nucleus", category: "Skeletal Muscle Histology" },
+            // Suppurative Arthritis
+{ question: "What is the main route of infection for suppurative arthritis?", options: ["Hematogenous spread", "Direct spread from adjacent bone", "Lymphatic spread", "Autoimmune reaction"], answer: "Hematogenous spread", category: "Suppurative Arthritis" },
 
-    // Neuromuscular Junction
-    { question: "What neurotransmitter is primarily involved in muscle contraction at the NMJ?", options: ["Dopamine", "Serotonin", "Acetylcholine", "GABA"], answer: "Acetylcholine", category: "Neuromuscular Junction" },
+// Rheumatoid Arthritis
+{ question: "What is the earliest pathological feature of rheumatoid arthritis?", options: ["Subchondral cysts", "Synovitis", "Fibrous ankylosis", "Bony ankylosis"], answer: "Synovitis", category: "Rheumatoid Arthritis" },
 
-    // Muscle Spindle
-    { question: "What do muscle spindles primarily detect?", options: ["Muscle tension", "Muscle length", "Muscle fatigue", "Muscle temperature"], answer: "Muscle length", category: "Neuromuscular Junction" },
+// Osteoarthritis
+{ question: "What is the characteristic feature of joint lesions in osteoarthritis?", options: ["Fibrillation and cracking of the cartilage matrix", "Thickened synovial membrane with villous projections", "Presence of tophi", "Necrosis of the articular cartilage"], answer: "Fibrillation and cracking of the cartilage matrix", category: "Osteoarthritis" },
 
-    // Golgi Tendon Organ
-    { question: "The function of the Golgi tendon organ is to:", options: ["Detect muscle stretch", "Detect muscle tension", "Control muscle contraction speed", "Enhance muscle strength"], answer: "Detect muscle tension", category: "Neuromuscular Junction" },
+// Gouty Arthritis
+{ question: "What histopathological feature is characteristic of gouty arthritis?", options: ["Needle-shaped urate crystals surrounded by chronic inflammation", "Pus in the joint cavity", "Thickening of the synovial membrane", "Subperiosteal abscess formation"], answer: "Needle-shaped urate crystals surrounded by chronic inflammation", category: "Gouty Arthritis" },
 
-    // Cartilage
-    { question: "Which type of cartilage lacks perichondrium?", options: ["Hyaline cartilage", "Elastic cartilage", "Fibrocartilage", "All types have perichondrium"], answer: "Fibrocartilage", category: "Cartilage" },
+// Chronic Osteomyelitis
+{ question: "What is a characteristic feature of chronic osteomyelitis?", options: ["Sequestrum formation", "Thickened synovial membrane", "Pus in the joint cavity", "Joint mice formation"], answer: "Sequestrum formation", category: "Chronic Osteomyelitis" },
 
-    // Bone Cells
-    { question: "Which bone cell is responsible for bone resorption?", options: ["Osteoblast", "Osteocyte", "Osteoclast", "Osteogenic cell"], answer: "Osteoclast", category: "Bone Histology" },
 
-    // Bone Matrix
-    { question: "What is the main organic component of bone matrix?", options: ["Hydroxyapatite", "Collagen type I", "Calcium phosphate", "Proteoglycans"], answer: "Collagen type I", category: "Bone Histology" },
+            // Chronic Osteomyelitis & Benign Tumors
 
-    // Acute Osteomyelitis
-    { question: "What is the most common site for acute osteomyelitis in children?", options: ["Vertebrae", "Long bones", "Skull", "Pelvis"], answer: "Long bones", category: "Acute Osteomyelitis" },
+{ question: "What is the primary predisposing factor for Chronic Suppurative Osteomyelitis?", options: ["Hematogenous spread from tuberculosis", "Inhalation of fungal spores", "Untreated or inadequately treated acute suppurative osteomyelitis", "Genetic predisposition"], answer: "Untreated or inadequately treated acute suppurative osteomyelitis", category: "Chronic Osteomyelitis" },
 
-    // Arthritis
-    { question: "Which type of arthritis is characterized by uric acid crystal deposition?", options: ["Rheumatoid arthritis", "Osteoarthritis", "Gouty arthritis", "Septic arthritis"], answer: "Gouty arthritis", category: "Arthritis" },
+{ question: "Which site is most commonly affected in Tuberculous Osteomyelitis?", options: ["Pelvis", "Distal phalanges", "Lower thoracic and upper lumbar vertebrae", "Proximal humerus"], answer: "Lower thoracic and upper lumbar vertebrae", category: "Tuberculous Osteomyelitis" },
 
-    // Muscle Action Potential
-    { question: "During muscle depolarization, which ion primarily moves into the cell?", options: ["Potassium", "Sodium", "Calcium", "Chloride"], answer: "Sodium", category: "Muscle Action Potential" }
-];
+{ question: "Which of the following is a distinguishing microscopic feature of Osteoid Osteoma?", options: ["Compact lamellae of bone with irregular Haversian systems", "Interconnecting trabeculae of bone rimmed by osteoblasts", "Irregular bony trabeculae capped by cartilage", "Collagen fibers with sparse bone formation"], answer: "Interconnecting trabeculae of bone rimmed by osteoblasts", category: "Benign Bone Tumors" },
+
+{ question: "What is a characteristic gross feature of Ossifying Fibroma?", options: ["Hard, rounded, sessile mass with a smooth white surface", "Small cancellous mass covered by cartilage", "Well-defined, firm, and expansile mass within the affected bone", "Brown or gray friable solid rounded mass"], answer: "Well-defined, firm, and expansile mass within the affected bone", category: "Benign Bone Tumors" },
+
+{ question: "Which of the following complications is commonly associated with Chronic Suppurative Osteomyelitis?", options: ["Pulmonary embolism", "Pathological fracture", "Sepsis", "Renal failure"], answer: "Pathological fracture", category: "Chronic Osteomyelitis" },
+
+            // Locally Malignant & Malignant Bone Tumors
+{ question: "Which site is most commonly affected by Giant Cell Tumor (GCT) of bone?", options: ["Diaphysis", "Epiphysis and metaphysis", "Pelvis", "Vertebra"], answer: "Epiphysis and metaphysis", category: "Locally Malignant Bone Tumors" },
+
+{ question: "What is the characteristic X-ray appearance of osteosarcoma?", options: ["Onion skin appearance", "Sun ray appearance", "Ground-glass opacity", "Punched-out lesions"], answer: "Sun ray appearance", category: "Malignant Bone Tumors" },
+
+{ question: "Which bone tumor is known for its multicentric origin from plasma cells?", options: ["Chondrosarcoma", "Ewing's Sarcoma", "Multiple Myeloma", "Fibrosarcoma"], answer: "Multiple Myeloma", category: "Malignant Bone Tumors" },
+
+{ question: "Which of the following is a common site for chondrosarcoma?", options: ["Femur", "Tibia", "Pelvis", "Mandible"], answer: "Pelvis", category: "Malignant Bone Tumors" },
+
+{ question: "What is a distinguishing microscopic feature of Ewing’s Sarcoma?", options: ["Multinucleated giant cells", "Small round blue cells with rosettes", "Spindle-shaped malignant cells", "Lobulated cartilage-like structures"], answer: "Small round blue cells with rosettes", category: "Malignant Bone Tumors" },
+
+            // Bone and Joint Infections
+{ question: "What is the most common bacterial cause of osteomyelitis?", options: ["Pseudomonas aeruginosa", "Staphylococcus aureus", "Escherichia coli", "Mycobacterium tuberculosis"], answer: "Staphylococcus aureus", category: "Osteomyelitis" },
+
+{ question: "Which virulence factor of Staphylococcus aureus binds immunoglobulin G (IgG) by the Fc region, inhibiting opsonization?", options: ["Protein A", "Clumping factor", "Fibronectin-binding protein", "Coagulase"], answer: "Protein A", category: "Staphylococcal Virulence Factors" },
+
+{ question: "What is the primary diagnostic test for identifying septic arthritis?", options: ["Blood culture", "Synovial fluid analysis", "X-ray imaging", "Complete blood count"], answer: "Synovial fluid analysis", category: "Infectious Arthritis Diagnosis" },
+
+{ question: "Which antibiotic is the drug of choice for treating methicillin-resistant Staphylococcus aureus (MRSA) infections?", options: ["Penicillin G", "Nafcillin", "Vancomycin", "Amoxicillin"], answer: "Vancomycin", category: "Staphylococcal Treatment" },
+
+{ question: "Which of the following toxins produced by Staphylococcus aureus is responsible for Toxic Shock Syndrome?", options: ["Enterotoxin", "Exfoliative toxin", "TSST-1", "α-toxin"], answer: "TSST-1", category: "Staphylococcal Toxins" },
+
+
+            
+        ];
+
 
         const quizForm = document.getElementById("quiz");
         quizData.forEach((q, i) => {
