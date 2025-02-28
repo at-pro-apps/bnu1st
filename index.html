@@ -1,200 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Medica - Login</title>
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            min-height: 100vh;
-            background: linear-gradient(-45deg, #009688, #3f51b5, #23a6d5, #23d5ab);
-            background-size: 400% 400%;
-            animation: gradient 15s ease infinite;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        @keyframes gradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        .login-container {
-            background: rgba(255, 255, 255, 0.95);
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-            width: 400px;
-            transform: translateY(0);
-            opacity: 0;
-            animation: slideUp 1s ease forwards;
-        }
-
-        @keyframes slideUp {
-            to {
-                opacity: 1;
-                transform: translateY(-20px);
-            }
-        }
-
-        .logo {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .logo img {
-            width: 80px;
-            height: auto;
-            margin-bottom: 15px;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-        }
-
-        h1 {
-            color: #333;
-            font-size: 24px;
-            margin-bottom: 30px;
-            text-align: center;
-        }
-
-        .input-group {
-            margin-bottom: 25px;
-            position: relative;
-        }
-
-        .input-group i {
-            position: absolute;
-            left: 15px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #666;
-        }
-
-        input {
-            width: 100%;
-            padding: 12px 20px 12px 45px;
-            border: 2px solid #ddd;
-            border-radius: 30px;
-            font-size: 16px;
-            transition: all 0.3s ease;
-        }
-
-        input:focus {
-            outline: none;
-            border-color: #009688;
-            box-shadow: 0 0 10px rgba(0, 150, 136, 0.3);
-        }
-
-        button {
-            width: 100%;
-            padding: 12px;
-            background: #009688;
-            color: white;
-            border: none;
-            border-radius: 30px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        button:hover {
-            background: #00796b;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 150, 136, 0.4);
-        }
-
-        .error-message {
-            color: #e74c3c;
-            text-align: center;
-            margin-top: 15px;
-            display: none;
-            animation: shake 0.5s;
-        }
-
-        @keyframes shake {
-            0%, 100% { transform: translateX(0); }
-            25% { transform: translateX(-10px); }
-            75% { transform: translateX(10px); }
-        }
-
-        @media (max-width: 480px) {
-            .login-container {
-                width: 90%;
-                padding: 25px;
-            }
-        }
-
-    </style>
+    <title>Medica</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    <div class="login-container">
-        <div class="logo">
-            <img src="logo.png" alt="Logo">
-            <h1>Medica Login</h1>
+    <header>
+        <div class="container">
+            <img src="name.png" alt="Medica" class="site-logo">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Main</a></li>
+                    <li><a href="subjects.html">Modules</a></li>
+                </ul>
+            </nav>
         </div>
-<button <a href="https://gd.games/instant-builds/85ce4b17-9ae7-4905-9f4f-3327d69608c5"> الدخول إلى المنصة</a> 
-    </div>
-
-    <script>
-        const validAccounts = {
-            'ahmed': '123',
-            'nagham': 'na25h12',
-            'youssef': 'mo423ha1m3',
-            'malak': 'm3a486lk',
-            'mai': 'ma83920i1',
-            'abdelrahman': 'ab213do30',
-            'salma': 'sa59ye2d',
-            'mahmoud': 'mo31h3m94d',
-            'std726': 'b728nud1',
-            'basma': 'ahm693e09',
-            'eyad': 'atef1111',
-            'abdelrahman': 'sa21092m',
-        };
-
-        document.getElementById('loginForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-            const errorMessage = document.getElementById('errorMessage');
-
-            if (validAccounts[username] && validAccounts[username] === password) {
-                window.location.href = 'quiz.html';
-            } else {
-                errorMessage.style.display = 'block';
-                setTimeout(() => {
-                    errorMessage.style.display = 'none';
-                }, 3000);
-                document.querySelector('.login-container').style.animation = 'shake 0.5s';
-            }
-        });
-
-        const inputs = document.querySelectorAll('input');
-        inputs.forEach(input => {
-            input.addEventListener('input', () => {
-                if (input.checkValidity()) {
-                    input.style.borderColor = '#009688';
-                } else {
-                    input.style.borderColor = '#e74c3c';
-                }
-            });
-        });
-    </script>
+    </header>
+    <main>
+        <div class="intro">
+            <h2>Welcome to Medica Platform</h2>
+            <p>انت فى أمان مع تيم Medica.</p>
+            <button><a href="subjects.html"> Modules </a></button>
+        </div>
+        <i class="medical-icon fas fa-stethoscope"></i>
+        <i class="medical-icon fas fa-syringe"></i>
+        <i class="medical-icon fas fa-pills"></i>
+        <i class="medical-icon fas fa-x-ray"></i>
+        <i class="medical-icon fas fa-thermometer"></i>
+        <i class="medical-icon fas fa-first-aid"></i>
+        <i class="medical-icon fas fa-hospital"></i>
+        <i class="medical-icon fas fa-heart"></i>
+        <i class="medical-icon fas fa-band-aid"></i>
+        <i class="medical-icon fas fa-dna"></i>
+    </main>
+    <footer>
+        <p>&copy; 2025 Developed By Medica Team</p>
+    </footer>
+    <script src="scripts.js"></script>
 </body>
 </html>

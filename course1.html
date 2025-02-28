@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medica</title>
+    <link rel="stylesheet" href="coursepage.css">
+    <style>
+        body::after {
+            content: var(--user-name, "User: Guest") " | Session: ABC123";
+            position: fixed;
+            top: 40%;
+            left: 30%;
+            transform: rotate(-30deg);
+            font-size: 2rem;
+            color: rgba(20, 200, 200, 0.5);
+            z-index: 10000;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Medica</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="courses.html">Modules</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="courses-title">Content</div>
+        <div class="courses-container">
+            <div class="card">
+                <h3> الإخبارات الإسبوعية</h3>
+                <p>.</p>
+                <button class="expand-btn" onclick="toggleLessonsMenu(this)">Browse</button>
+                <div class="lessons-menu" style="display: none;">
+                    <ul>
+                        <li><a href="quiz.html" onclick="openVideoPlayer('lesson1')">Quiz Week 3 </a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+    </main>
+
+    <footer>
+        <p>Developed by Medica © 2024</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const loggedInStudent = JSON.parse(localStorage.getItem('loggedInStudent'));
+            console.log('Logged in student data:', loggedInStudent);
+
+            if (loggedInStudent && loggedInStudent.username) {
+                document.body.style.setProperty('--user-name', `User: ${loggedInStudent.username}`);
+            } else {
+                document.body.style.setProperty('--user-name', 'User: Guest');
+            }
+        });
+
+        function toggleLessonsMenu(button) {
+            const menu = button.nextElementSibling;
+            menu.style.display = menu.style.display === "block" ? "none" : "block";
+        }
+
+        function openVideoPlayer(lessonId) {
+            const videoSource = document.getElementById("videoSource");
+            const videoPlayer = document.getElementById("videoPlayer");
+            const videoContainer = document.getElementById("videoContainer");
+
+            const videoMapping = {
+                lesson1: "videos/lesson1.mp4",
+                lesson2: "videos/lesson2.mp4",
+            };
+
+            videoSource.src = videoMapping[lessonId] || "";
+            videoPlayer.load();
+            videoPlayer.play();
+            videoContainer.style.display = "block";
+        }
+    </script>
+</body>
+</html>

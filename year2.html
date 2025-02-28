@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medica</title>
+    <link rel="stylesheet" href="sciencestyles.css">
+    <style>
+        body::after {
+            content: var(--user-name, "User: Guest") " | Session: ABC123";
+            position: fixed;
+            top: 40%;
+            left: 30%;
+            transform: rotate(-30deg);
+            font-size: 2rem;
+            color: rgba(20, 200, 200, 0.5);
+            z-index: 10000;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Medica</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Main</a></li>
+                    <li><a href="subjects.html">Year</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <div class="login-container">
+            <h2>تسجيل الدخول</h2>
+            <form action="#" method="post">
+                <label for="username">اسم المستخدم</label>
+                <input type="text" id="username" name="username" required>
+                
+                <label for="password">كلمة المرور</label>
+                <input type="password" id="password" name="password" required>
+                
+                <button type="submit">تسجيل الدخول</button>
+            </form>
+        </div>
+    </main>
+    
+    <footer>
+        <p>Developed by ATpro Apps © 2024</p>
+    </footer>
+
+    <script>
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            const users = {
+                "ahmed": {password: "123", courses: "8-9-10-11-12-1"},
+                "ali": {password: "123", courses: "1-2"},
+                "mohamed": {password: "kaila", courses: "1-2"}
+            };
+
+            const user = users[username];
+            if (user && user.password === password) {
+                localStorage.setItem('loggedInStudent', JSON.stringify({username: username, ...user}));
+                window.location.href = '1courses.html';
+            } else {
+                alert('اسم المستخدم أو كلمة المرور غير صحيحة');
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const loggedInStudent = JSON.parse(localStorage.getItem('loggedInStudent'));
+            if (loggedInStudent && loggedInStudent.username) {
+                document.body.style.setProperty('--user-name', `User: ${loggedInStudent.username}`);
+            } else {
+                document.body.style.setProperty('--user-name', 'User: Guest');
+            }
+        });
+    </script>
+</body>
+</html>
