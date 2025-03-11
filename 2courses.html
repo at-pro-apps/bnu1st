@@ -65,9 +65,9 @@
 
     <script>
         const courses = {
-            "1": { name: "MSK Module", image: "course1.jpg" },
-            "2": { name: "Terminology", image: "images/course2.jpg" },
-            "3": { name: "كورس", image: "images/course3.jpg" },
+            "1": { name: "Week 1", image: "course11.jpg" },
+            "2": { name: "Week 2", image: "images/course2.jpg" },
+            "3": { name: "Week 3", image: "images/course3.jpg" },
             "4": { name: "كورس", image: "images/course4.jpg" },
             "5": { name: "كورس", image: "images/course5.jpg" },
             "6": { name: "كورس", image: "images/course6.jpg" }
@@ -99,7 +99,7 @@
         document.querySelectorAll('.browse-btn').forEach(button => {
             button.addEventListener('click', () => {
                 const courseId = button.getAttribute('data-course-id');
-                window.location.href = `course${courseId}.html`;
+                window.location.href = `ibl${courseId}.html`;
             });
         });
     </script>
